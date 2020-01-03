@@ -30,8 +30,7 @@ class ProjectsController < ApplicationController
                   Project.selected(season: season || Season.current)
                 else
                   Project.in_current_season.not_rejected
-                end
-    end
+  end
 
   def destroy
     @project.destroy
