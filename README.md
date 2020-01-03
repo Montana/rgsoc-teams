@@ -87,7 +87,7 @@ createuser -P -s rgsoc
 #### :warning: +[__NSPlaceholderDictionary initialize] may have been in progress in another thread when fork() was called error :warning:
 
 ```bash
-# Some may run into this problem depending on what version of macOS they have, you can run in the console
+# Some may run into this problem depending on what version of macOS they have, you can run in the Ruby console
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES 
 
 # Then run the RGSoC app locally again via 
