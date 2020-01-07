@@ -27,13 +27,6 @@ RSpec.describe Ability, type: :model do
         end
       end
 
-      context 'when different users' do
-        let!(:other_user) { create(:user) }
-        let!(:conference_preference) { create(:conference_preference, team: team) }
-        # not testing what it means to test
-        xit { expect(ability).not_to be_able_to(:crud, other_user) }
-      end
-    end
 
     describe "just orga members, team's supervisor and team's students should be able to see offered conference for a team" do
       let(:user) { create(:student, confirmed_at: Date.yesterday) }
