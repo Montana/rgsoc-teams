@@ -26,6 +26,10 @@ RSpec.describe 'Editing Teams', type: :feature do
     expect(page).not_to have_content('Non-Accepted')
     expect(team.project).to be_nil
 
+    select 'Exercism', from: 'Project'
+    fill_in 'URL', with: 'https://example.com'
+    click_on 'Save'
+
     expect(page).to have_content('Team was successfully updated')
     expect(page).to have_content('https://example.com')
     expect(team.reload.project).to eq(exercism)
