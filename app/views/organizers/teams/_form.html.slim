@@ -77,3 +77,4 @@
   - if admin?
     = f.input :season_id, as: :select, collection: Season.order('name DESC') { |e| [s.name, s.id] }
   - if f.object.accepted?
+    = render 'teams/conference_preference_fields', f: f
