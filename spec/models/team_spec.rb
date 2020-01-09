@@ -176,7 +176,7 @@ RSpec.describe Team, type: :model do
         it 'allows to add 4 new coaches' do
           expect {
             team.update roles_attributes: coach_attributes
-          }.to change { team.members.count }.by 4
+          }.to change { team.members.count }.by 5
         end
 
         it 'ignores coaches marked for destruction' do
@@ -184,7 +184,7 @@ RSpec.describe Team, type: :model do
           roles_attributes << remove_coach
           expect {
             team.update roles_attributes: roles_attributes
-          }.to change { team.members.count }.by 4
+          }.to change { team.members.count }.by 5
         end
 
         it 'does not allow to add more than 5 new coaches' do
